@@ -25,7 +25,7 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-             newman run florida_release_notes.postman_collection.json --folder "1FPAY" -e Env-1fpay-test.postman_environment.json -r allure
+             newman run florida_release_notes.postman_collection.json --folder -e Env-1fpay-test.postman_environment.json -r allure
         
       - name: mostra as pastas
         run: dir
