@@ -28,27 +28,4 @@ jobs:
           newman run florida_release_notes.postman_collection.json -e Env-1fpay-test.postman_environment.json -r htmlextra --reporter-htmlextra-browserTitle "PEFISA QUALITY" -r htmlextra --reporter-htmlextra-title "Florida Test Api Automation" --reporter-htmlextra-export testResults/PNB_Test_Api_Automation.html
 
       
-      # 3 - Steps - Upload the contents of Test Results directory to workspace
-      - name: Step 3 - Output the run Details
-        uses: actions/upload-artifact@v2
-        with: 
-         name: RunReports
-         path: testResults
-         
-      # 4 - Steps - Allure History
-      - name: Step 4 - Get allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages-newman
-          path: gh-pages-newman
-          
-      # Step 5 - Deploy report to Github Pages
-      - name: Step 5 - Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-            PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            PUBLISH_BRANCH: gh-pages-newman
-            PUBLISH_DIR: testResult
+     
