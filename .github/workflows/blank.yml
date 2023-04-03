@@ -24,7 +24,7 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p testResults
-          newman run florida_release_notes.postman_collection.json -e Env-1fpay-test.postman_environment.json -r htmlextra --reporter-htmlextra-browserTitle "PEFISA QUALITY" -r htmlextra --reporter-htmlextra-title "Florida Test Api Automation" --reporter-htmlextra-export testResults/PNB_Test_Api_Automation.html
+          newman run florida_release_notes.postman_collection.json --iteration-data dataset/data.json -r allure
 
       
       # 3 - Steps - Upload the contents of Test Results directory to workspace
