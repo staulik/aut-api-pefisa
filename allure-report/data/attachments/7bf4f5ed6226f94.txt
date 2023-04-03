@@ -1,0 +1,9 @@
+const response = pm.response.json();
+
+pm.test("Check value is either 1 or 2", function () {
+    pm.expect(response.naturalPerson.gender).to.be.oneOf([1, 2]);
+});
+
+pm.test("Status test", function () {
+    pm.response.to.have.status(200);
+});

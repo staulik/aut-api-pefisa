@@ -1,0 +1,1 @@
+{"error":{"errorCode":"3300","message":"Não foi possível recuperar lista de cartões"}}
