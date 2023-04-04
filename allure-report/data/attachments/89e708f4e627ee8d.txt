@@ -1,0 +1,3 @@
+pm.test("Successful GET request", function () {
+    pm.response.to.have.status(200);
+});
