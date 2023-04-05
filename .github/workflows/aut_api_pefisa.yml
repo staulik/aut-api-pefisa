@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-  - cron: '5 12 * * MON-FRI'
+  - cron: '5 17 * * MON-FRI'
   
   workflow_dispatch:
 permissions: write-all
