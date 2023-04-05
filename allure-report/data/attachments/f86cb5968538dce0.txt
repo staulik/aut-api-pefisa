@@ -1,1 +1,0 @@
-{"SendMessageResponse":{"ResponseMetadata":{"RequestId":"310f11eb-03bd-55ac-a08f-4d4cb2f0c625"},"SendMessageResult":{"MD5OfMessageAttributes":"91f36c465f80f1a28b9fee09acccfd66","MD5OfMessageBody":"0f682bdbaa7865e16a73a4674de7b41e","MD5OfMessageSystemAttributes":null,"MessageId":"febffa81-80cf-48aa-b29c-5f68c321addf","SequenceNumber":null}}}
