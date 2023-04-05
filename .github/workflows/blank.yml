@@ -1,12 +1,13 @@
 name: Newman Tests by Postman.
 
 on:
-  schedule:
-  - cron: '0 11 * * MON-FRI'
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+  - cron: '0 12 * * MON-FRI'
+  
   workflow_dispatch:
 permissions: write-all
 
