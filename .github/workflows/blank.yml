@@ -36,6 +36,7 @@ jobs:
       - name:  Step 3 - Collect Allure files and generate allure-report folder
         run: |
           allure generate ./allure-results -o allure-report/
+          allure generate --clean && allure report export --output-dir=/temp/my_report && cd /temp && zip -r my_report.zip my_report
       - name: 🎁 Step 4 - Publishing Allure artifact to GitHub Actions
         uses: actions/upload-artifact@v3
         with:
@@ -50,22 +51,22 @@ jobs:
           publish_dir: allure-report
           destination_dir: allure-report
           
-      - name: Send email
-        uses: dawidd6/action-send-mail@v2
-        with:
-         server_address: smtp.gmail.com
-         server_port: 587
-         username: ${{ secrets.USER_MAIL}}
-         password: ${{ secrets.PASS }}
-         subject: Teste de envio de e-mail
-         body: |
-          Olá,
+      #- name: Send email
+      #  uses: dawidd6/action-send-mail@v2
+      #  with:
+      #   server_address: smtp.gmail.com
+      #   server_port: 587
+      #  username: ${{ secrets.USER_MAIL}}
+      #  password: ${{ secrets.PASS }}
+      #  subject: Teste de envio de e-mail
+      #   body: |
+       #   Olá,
 
-          Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
+        #  Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
 
-          Aqui está a URL que você solicitou: https://exemplo.com
+       #   Aqui está a URL que você solicitou: https://exemplo.com
 
-          Atenciosamente,
+       #   Atenciosamente,
 
-          Seu nome
-         to: silvio.aulik@gmail.com
+       #   Seu nome
+       #  to: silvio.aulik@gmail.com
