@@ -36,7 +36,7 @@ jobs:
       - name:  Step 3 - Collect Allure files and generate allure-report folder
         run: |
           allure generate ./allure-results -o allure-report/
-          allure generate --clean && allure report export --output-dir=/temp/my_report && cd /temp && zip -r my_report.zip my_report
+          
       - name: 🎁 Step 4 - Publishing Allure artifact to GitHub Actions
         uses: actions/upload-artifact@v3
         with:
