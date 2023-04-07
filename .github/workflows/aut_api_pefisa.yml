@@ -49,3 +49,15 @@ jobs:
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: allure-report
           destination_dir: allure-report
+          
+      - name: Send email
+        uses: dawidd6/action-send-mail@v3
+        with:
+         server_address: smtp.gmail.com
+         server_port: 465
+         username: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}
+         subject: 'Assunto do Email'
+         body: ' Dashboard dos Testes: https://staulik.github.io/aut-api-pefisa/allure-report/#'
+         to: 'saulitest@gmail.com'
+         from: 'staulik10@gmail.com'
