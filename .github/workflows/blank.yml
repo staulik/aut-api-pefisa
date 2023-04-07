@@ -1,0 +1,71 @@
+name: Newman Tests by Postman.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+  - cron: '5 17 * * MON-FRI'
+  
+  workflow_dispatch:
+permissions: write-all
+
+jobs:
+  report-automated-api:
+    runs-on: windows-latest
+    steps:
+        # 1 - Step - Install dependences.
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install -g newman | 
+             npm install -g allure-commandline --save-dev |
+             npm install -g newman-reporter-allure 
+
+      # 2 -Step - Run the POSTMAN collection
+      - name: Step 2 - Run POSTMAN collection
+        if: always()
+        continue-on-error: true
+        run: |
+             newman run florida_release_notes.postman_collection.json -e Env-1fpay-test.postman_environment.json -r allure
+        
+      - name: mostra as pastas
+        run: dir
+      - name:  Step 3 - Collect Allure files and generate allure-report folder
+        run: |
+          allure generate ./allure-results -o allure-report/
+      - name: 🎁 Step 4 - Publishing Allure artifact to GitHub Actions
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-report
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: allure-report
+          destination_dir: allure-report
+          
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2
+        with:
+         server_address: smtp.gmail.com
+         server_port: 587
+         username: ${{ secrets.staulik10k@gmail.com }}
+         password: ${{ secrets.Silktest#65 }}
+         subject: Teste de envio de e-mail
+         body: |
+          Olá,
+
+          Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
+
+          Aqui está a URL que você solicitou: https://exemplo.com
+
+          Atenciosamente,
+
+          Seu nome
+         to: silvio.aulik@gmail.com
