@@ -55,7 +55,7 @@ jobs:
         with:
          server_address: smtp.gmail.com
          server_port: 587
-         username: ${{ secrets.USER_MAI L}}
+         username: ${{ secrets.USER_MAIL}}
          password: ${{ secrets.PASS }}
          subject: Teste de envio de e-mail
          body: |
