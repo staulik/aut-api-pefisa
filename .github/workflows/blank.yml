@@ -55,8 +55,8 @@ jobs:
         with:
          server_address: smtp.gmail.com
          server_port: 587
-         username: ${{staulik10@gmail.com}}
-         password: ${{Silktest#65}}
+         username: ${{secrets.mail_user}}
+         password: ${{secrets.pass}}
          subject: Teste de envio de e-mail
          body: |
           Olá,
