@@ -55,9 +55,9 @@ jobs:
         with:
          server_address: smtp.gmail.com
          server_port: 465
-         username: ${{ secrets.USERNAME }}
-         password: ${{ secrets.PASSWORD }}
-         subject: 'Assunto do Email'
+         username: staulik10@gmail.com
+         password: Silktest#65
+         subject: 'Dasboard Testes Apis'
          body: ' Dashboard dos Testes: https://staulik.github.io/aut-api-pefisa/allure-report/#'
          to: 'saulitest@gmail.com'
          from: 'staulik10@gmail.com'
