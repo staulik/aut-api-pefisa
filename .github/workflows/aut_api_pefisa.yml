@@ -51,13 +51,21 @@ jobs:
           destination_dir: allure-report
           
       - name: Send email
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v2
         with:
          server_address: smtp.gmail.com
-         server_port: 465
-         username: staulik10@gmail.com
-         password: Silktest#65
-         subject: 'Dasboard Testes Apis'
-         body: ' Dashboard dos Testes: https://staulik.github.io/aut-api-pefisa/allure-report/#'
-         to: 'saulitest@gmail.com'
-         from: 'staulik10@gmail.com'
+         server_port: 587
+         username: ${{ secrets.staulik10k@gmail.com }}
+         password: ${{ secrets.Silktest#65 }}
+         subject: Teste de envio de e-mail
+         body: |
+          Olá,
+
+          Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
+
+          Aqui está a URL que você solicitou: https://exemplo.com
+
+          Atenciosamente,
+
+          Seu nome
+         to: silvio.aulik@gmail.com
