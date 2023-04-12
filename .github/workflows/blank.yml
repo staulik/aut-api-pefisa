@@ -51,20 +51,20 @@ jobs:
           publish_dir: allure-report
           destination_dir: allure-report
           
-     # - name: Send email
-     #   uses: dawidd6/action-send-mail@v2
-      #  with:
-      #   server_address: smtp.gmail.com
-     #    server_port: 587
-      #   username: ${{secrets.USER}}
-      #   password: ${{secrets.PASS}}
-      #   subject: Teste de envio de e-mail
-       #  body: |
-        #  Olá,
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2
+        with:
+         server_address: smtp.gmail.com
+         server_port: 587
+         username: ${{env.USER}}
+         password: ${{env.PASS}}
+         subject: Teste de envio de e-mail
+         body: |
+          Olá,
 
-         # Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
+          Esta é uma mensagem de teste de envio de e-mail do GitHub Actions.
 
-         # Aqui está a URL que você solicitou:  https://staulik.github.io/aut-api-pefisa/allure-report/#
+          Aqui está a URL que você solicitou:  https://staulik.github.io/aut-api-pefisa/allure-report/#
 
        #   Atenciosamente,
 
