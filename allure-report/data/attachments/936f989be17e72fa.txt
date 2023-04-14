@@ -1,0 +1,1 @@
+{"cardId":39,"embossingGroup":null,"embossingGroupId":null,"cardDesignId":3,"emissonReasonId":null,"embossingStatusId":2,"statusDate":"2023-04-13T17:21:29.148Z","feeValue":null,"feeDate":null,"embossingTypeId":2}
