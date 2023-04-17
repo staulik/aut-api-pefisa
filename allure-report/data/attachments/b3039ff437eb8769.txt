@@ -1,1 +1,0 @@
-{"phone":"999999999","areaCode":"11","countryCode":"55","extension":"11","type":3,"verified":false,"gmtTime":null,"partyId":796,"phoneId":1555,"active":true,"createDate":"2023-02-10T14:08:40.929Z"}
