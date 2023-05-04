@@ -1,1 +1,0 @@
-[{"accountId":1943,"active":true,"partyRoleId":2522,"programId":1,"programName":"PEFISA ELO MAIS","accountStatus":{"status":"1","reason":null,"description":null},"accountInvolvement":"1","relativeType":null,"partyId":1943}]
