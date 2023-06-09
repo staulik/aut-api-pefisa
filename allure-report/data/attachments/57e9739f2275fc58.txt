@@ -1,0 +1,1 @@
+{"Message":"User: anonymous is not authorized to perform: execute-api:Invoke on resource: arn:aws:execute-api:sa-east-1:********2107:bkfm6ulj60/testing/GET/v1/cards/39/history"}
